@@ -15,4 +15,8 @@ class Card
     "ANSWER: #{answer}"
   end
 
+  def correct?(guess)
+    guess == @answer
+  end
+
 end

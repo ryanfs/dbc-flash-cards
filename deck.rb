@@ -12,4 +12,24 @@ class Deck
     self.load
   end
 
+  def empty?
+    @cards.empty?
+  end
+
+  def move_card_to_correct_pile(card)
+    @correct_pile << card
+  end
+
+  def remove_from_original_pile
+    @cards.shift
+  end
+
+  def move_card_to_bottom_of_deck
+    @cards.rotate
+  end
+
+  # def shuffle!
+  #   @cards.shuffle
+  # end
+
 end
