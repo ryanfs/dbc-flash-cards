@@ -1,15 +1,10 @@
-require_relative 'view'
-require_relative 'card'
-require_relative 'deck'
-
 class Controller
 
   def initialize(args={})
     @view = args.fetch(:view, View)
   end
 
-
-  def do_stuff
+  def run
     deck = Deck.new()
 
     @view.welcome
