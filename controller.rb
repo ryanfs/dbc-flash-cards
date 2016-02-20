@@ -37,6 +37,7 @@ class Controller
     yesno = @view.submit_guess
     if yesno == 'yes'
       deck.cards = deck.incorrect_pile
+      deck.incorrect_pile = []
       run(deck)
     end
 
