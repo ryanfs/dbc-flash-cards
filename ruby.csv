@@ -1,0 +1,29 @@
+alias, To create a second name for the variable or method
+and, A command that appends two or more objects together
+begin, Delimits a begin block of code which can allow the use of while and until in modifier position with multi-line statements
+break, Gives an unconditional termination to a code block and is usually placed with an argument
+case, Starts a case statement
+class, Opens a class definition block which can later be reopened and added to with variables and even functions
+def, Used to define a function
+do, Paired with end this can delimit a code block much like curly braces
+elsif, Much like else but has a higher precedence and is usually paired with terms
+ensure, Marks the final optional clause of a begin/end block generally in cases where the block also contains a rescue clause
+for, A loop constructor used in for loops
+if, Basic conditional statement constructor
+in, Helps define a for loop when used with for
+module, Opens a library or module within a Ruby Stream
+next, Bumps an iterator or a while or until block to the next iteration unconditionally and without executing whatever may remain of the block
+not, Boolean negation
+redo, Causes unconditional reexecution of a code block with the same parameter bindings as the current execution
+retry, Inside a rescue clause causes Ruby to return to the top of the enclosing code (the begin keyword, or top of method or block) and try executing the code again
+return, Inside a method definition executes the ensure clause if present and then returns control to the context of the method call
+self, The current object and the default receiver of messages (method calls) for which no explicit receiver is specified
+super, Called from a method searches along the method lookup path (the classes and modules available to the current object) for the next method of the same name as the one being executed
+then, Optional component of conditional statements
+true, The sole instance of the special class TrueClass
+undef, Undefines a given method for the class or module in which it is called
+unless, The negative equivalent of if
+until, The inverse of while - executes code until a given condition is true
+when, Same as case
+while, Takes a condition argument and executes the code that follows (up to a matching end delimiter) while the condition is true
+yield, Called from inside a method body yields control to the code block (if any) supplied as part of the method call

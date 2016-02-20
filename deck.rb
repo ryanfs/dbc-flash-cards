@@ -4,11 +4,10 @@ class Deck
 
   include Parser
 
-  # attr_reader  :incorrect_pile
   attr_accessor :cards, :incorrect_pile
 
-  def initialize(file = 'cards.csv')
-    @cards =[]
+  def initialize(file = 'fun.csv')
+    @cards = []
     @incorrect_pile = []
     self.load(file)
     @file = file
