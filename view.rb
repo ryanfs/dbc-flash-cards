@@ -2,8 +2,18 @@ module View
 
   def self.welcome
     puts 'Welcome to Flash Cards!'
+    puts ''
+    puts '  i___i'
+    puts '  [@_@]'
+    puts " /|___|\\"
+    puts '  d   b'
+    puts ''
+    puts 'Please select a deck:'
+    puts '  Ruby'
+    puts '  Fun'
+    puts ''
+    puts "To exit the program, type 'exit' at any time."
   end
-
 
   def self.correct
     puts 'Correct! You are safe from shaming... for now.'
@@ -11,7 +21,7 @@ module View
 
   def self.incorrect
     insult_array = ['Wrong! Idiot. Go back to school and try to learn something...', 'Are you even trying?', 'Right!... is what I would say if you actually got it right...','Are you using the right flash cards?', 'Sorry, the beginner questions are that way ==>' ]
-puts insult_array.sample
+    puts insult_array.sample
   end
 
   def self.question(card)
@@ -22,7 +32,7 @@ puts insult_array.sample
     puts card.show_answer
   end
 
-  def self.submit_guess
+  def self.get_user_input
     gets.chomp.downcase
   end
 

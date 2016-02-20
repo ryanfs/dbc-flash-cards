@@ -1,26 +1,35 @@
+require 'pry'
 class Controller
 
   def initialize(args={})
     @view = args.fetch(:view, View)
-    @deck = Deck.new()
+    @deck = []
   end
 
   def run(deck = @deck)
-   deck.shuffle!
-    @view.welcome
+    if deck.empty?
+      @view.welcome
+      deck_selection = @view.get_user_input
+      @deck = Deck.new()
+      if deck_selection == 'ruby'
+        @deck = Deck.new('ruby.csv')
+      elsif deck_selection == 'fun'
+        @deck = Deck.new('fun.csv')
+      end
+    end
+
+    @deck.shuffle!
     i = 0
-    deck.cards.each do |card|
-
+    @deck.cards.each do |card|
       @view.question(card)
-      guess = @view.submit_guess
-
+      guess = @view.get_user_input
       return if guess == 'exit'
 
       if card.correct?(guess)
         @view.correct
       else
         @view.incorrect
-      deck.move_card_to_incorrect_pile(card)
+        @deck.move_card_to_incorrect_pile(card)
         i += 1
       end
     end
@@ -34,11 +43,11 @@ class Controller
     return if i == 0
 
     @view.repeat_incorrect_cards
-    yesno = @view.submit_guess
+    yesno = @view.get_user_input
     if yesno == 'yes'
-      deck.cards = deck.incorrect_pile
-      deck.incorrect_pile = []
-      run(deck)
+      @deck.cards = @deck.incorrect_pile
+      @deck.incorrect_pile = []
+      run(@deck)
     end
 
   end
