@@ -10,7 +10,7 @@ module View
   end
 
   def self.incorrect
-    insult_array = ['Wrong! Idiot. Go back to school and try to learn something...' ]
+    insult_array = ['Wrong! Idiot. Go back to school and try to learn something...', 'Are you even trying?', 'Right!... is what I would say if you actually got it right...','Are you using the right flash cards?', 'Sorry, the beginner questions are that way ==>' ]
 puts insult_array.sample
   end
 
