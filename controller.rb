@@ -14,6 +14,8 @@ class Controller
       @view.question(card)
       guess = @view.submit_guess
 
+      return if guess == 'exit'
+
       if card.correct?(guess)
         @view.correct
       else
@@ -40,31 +42,3 @@ class Controller
 
   end
 end
-
-
-
-
-#   def run(deck = @deck)
-#     # deck = Deck.new()
-#     current_deck.shuffle!
-#     @view.welcome
-#     i = 0
-#     for card in deck.cards
-#       @view.question(card)
-#       guess = @view.submit_guess
-#       if card.correct?(guess)
-#         @view.correct
-#       else
-#         @view.incorrect
-#         i += 1
-#         deck.move_card_to_incorrect_pile(card)
-#       end
-#     end
-#     @view.game_over_shaming(i)
-#     @view.repeat_incorrect_cards
-#     yesno = @view.submit_guess
-#     if yesno = 'yes'
-#       run(deck.incorrect_pile)
-#     end
-#   end
-# end
