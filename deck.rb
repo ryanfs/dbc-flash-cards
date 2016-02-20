@@ -4,20 +4,26 @@ class Deck
 
   include Parser
 
-  attr_reader :cards, :correct_pile
+  attr_reader  :incorrect_pile
+  attr_accessor :cards
 
-  def initialize()
+  def initialize(file = 'cards.csv')
     @cards =[]
-    @correct_pile = []
-    self.load
+    @incorrect_pile = []
+    self.load(file)
+    @file = file
   end
+
+  # def load_files
+  #   load(@file)
+  # end
 
   def empty?
     @cards.empty?
   end
 
-  def move_card_to_correct_pile(card)
-    @correct_pile << card
+  def move_card_to_incorrect_pile(card)
+    @incorrect_pile << card
   end
 
   def remove_from_original_pile
@@ -28,8 +34,8 @@ class Deck
     @cards.rotate
   end
 
-  # def shuffle!
-  #   @cards.shuffle
-  # end
+  def shuffle!
+    @cards.shuffle!
+  end
 
 end

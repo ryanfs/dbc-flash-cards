@@ -1,7 +1,7 @@
 module Parser
 
-  def load
-    CSV.foreach('cards.csv') do |row|
+  def load(file)
+    CSV.foreach(file) do |row|
       answer = row[0]
       question = row[1]
       @cards << Card.new(question: question, answer: answer)
@@ -9,3 +9,4 @@ module Parser
   end
 
 end
+
